@@ -15,6 +15,7 @@
 ### Documentation
 
 #### => Payload
+```
 - firstname: string
 - password: string
 - email: string
@@ -22,6 +23,7 @@
 - lastname: string
 - gender: string
 - country: string
+```
 
 
 - /api/v1/auth/signup   - POST   - Signup   - Success/Error   - 201/400
