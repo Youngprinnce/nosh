@@ -1,4 +1,4 @@
-# Simple Signup/Signin Authentication flow with NodeJS, Express, MongoDB
+## Simple  Authentication flow with NodeJS, Express, MongoDB
 
 ## Features
 - User can signup
