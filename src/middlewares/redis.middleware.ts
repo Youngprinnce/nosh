@@ -4,6 +4,7 @@ import redisService from '../services/redis.service';
 import jwtService from '../services/jwt.service';
 import { ResponseHelper } from '../utils/response-helper.util';
 
+// Verify refresh token middleware
 export const redisMiddleware = async (req:Request, res:Response, next:NextFunction) => {
     const token = req.body.refreshToken;
     if(!token) {

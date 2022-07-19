@@ -27,9 +27,7 @@ export async function signup(req: Request, res: Response) {
 
         return ResponseHelper.success<{}>(res, {}, {statusCode: StatusCode.CREATED, message: 'User created successfully'});
     } catch (error: any) {
-        console.log(error)
-        res.send(error)
-        //handleAppExceptions(error, res);
+        handleAppExceptions(error, res);
     }
 }
 
@@ -47,6 +45,7 @@ export async function signin(req: Request, res: Response) {
 
         const {access, refresh} = await jwtService.generate({id: user._id, email: user.email});
 
+        // format the response
         const authData: AuthData = {
             user: customResponse(user),
             access_token: access,

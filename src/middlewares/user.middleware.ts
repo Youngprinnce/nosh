@@ -3,6 +3,7 @@ import StatusCode from '../enums/status-code.enum';
 import { ResponseHelper } from '../utils/response-helper.util';
 import { UserUpdateSchema } from '../validations/user.validations';
 
+// Validate user update data
 export const validateUpdateUserMiddleware = (req:Request, res:Response, next:NextFunction) => {
     const {error} =  UserUpdateSchema.validate(req.body);
     if (error) {

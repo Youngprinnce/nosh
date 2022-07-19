@@ -4,6 +4,7 @@ import { Response } from "express";
 import { ResponseHelper } from './response-helper.util';
 import StatusCode from "../enums/status-code.enum";
 
+// Handle different exceptions
 const handleAppExceptions = (error: IAppException, res:Response) => {
   switch (error.name) {
     case AppException.NotFoundException:

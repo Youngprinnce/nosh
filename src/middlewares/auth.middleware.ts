@@ -5,6 +5,7 @@ import { JWT_ACCESS_SECRET } from '../config/index.config';
 import jwtService from '../services/jwt.service';
 import StatusCode from '../enums/status-code.enum';
 
+// Validate signup data
 export const validateSignupMiddleware = (req:Request, res:Response, next:NextFunction) => {
     const {error} =  AuthSignupSchema.validate(req.body);
     if (error) {
@@ -14,6 +15,7 @@ export const validateSignupMiddleware = (req:Request, res:Response, next:NextFun
     next();
 }
 
+// Auhthenticate user
 export const authenticateMiddleware = async (req:Request, res:Response, next:NextFunction) => {
     const requestHeaderAuthorization = req.headers.authorization;
     if(!requestHeaderAuthorization) {
@@ -31,6 +33,7 @@ export const authenticateMiddleware = async (req:Request, res:Response, next:Nex
     next();
 }
 
+// Validate signin data
 export const validateSigninMiddleware = (req:Request, res:Response, next:NextFunction) => {
     const {error} =  AuthSigninSchema.validate(req.body);
     if (error) {
